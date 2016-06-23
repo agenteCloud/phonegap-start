@@ -34,6 +34,13 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+		cordova.plugins.zbtprinter.print("^XA^FO10,10^AFN,26,13^FDHello, World!^FS^XZ",
+			function(success) { 
+				alert("Print ok"); 
+			}, function(fail) { 
+				alert(fail); 
+			}
+		);		
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
